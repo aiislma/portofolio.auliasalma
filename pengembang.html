@@ -1,0 +1,670 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+    EJM Team Page
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    /* Global Resets and Base Styles */
+    * {
+    box-sizing: border-box;
+    }
+    body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #6a828e; /* Slightly darker background for better contrast */
+    color: white;
+    line-height: 1.6;
+    }
+    a {
+    color: inherit;
+    text-decoration: none;
+    }
+
+    /* Topbar Styles (Unchanged from original) */
+    .topbar {
+    background-color: #052a3a;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    }
+    .topbar a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    }
+    .topbar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+    }
+
+    /* Header Styles - Enhanced */
+    header {
+    background: linear-gradient(to right, #ffffff, #f0f0f0); /* Subtle gradient */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px; /* Increased padding */
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    }
+    .header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Increased gap */
+    }
+    .header-left img.logo {
+    width: 55px; /* Slightly larger logo */
+    height: 55px;
+    object-fit: contain;
+    }
+    .header-left .ejm-text {
+    font-weight: 800; /* Bolder font */
+    font-size: 28px; /* Larger font size */
+    color: #052a3a; /* Darker text color */
+    position: relative;
+    padding-bottom: 8px; /* Increased padding */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Text shadow */
+    }
+    .header-left .ejm-text::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px; /* Wider underline */
+    height: 5px; /* Thicker underline */
+    background-color: #f7d600;
+    border-radius: 2px; /* Slightly rounded underline */
+    }
+    .header-left .search-circle {
+    background-color: #f7d600;
+    border-radius: 50%;
+    width: 55px; /* Slightly larger search circle */
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for search circle */
+    transition: all 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Ubah kursor menjadi pointer */
+    }
+    .header-left .search-circle:hover {
+    background-color: #e6c500; /* Darker yellow on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .header-left .search-circle i {
+    font-size: 26px; /* Larger icon */
+    color: #052a3a; /* Darker icon color */
+    }
+
+    /* Search Form Styles */
+    .search-form {
+    display: flex;
+    align-items: center;
+    }
+    .search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    }
+    .search-input:focus {
+    outline: none;
+    border-color: #f7d600;
+    box-shadow: 0 0 5px rgba(247, 214, 0, 0.5);
+    }
+
+    /* Navigation Styles - Enhanced */
+    nav {
+    display: flex;
+    gap: 30px; /* Increased gap between nav items */
+    flex-wrap: wrap;
+    }
+    nav a {
+    font-weight: 700;
+    font-size: 15px; /* Slightly larger font */
+    color: #333; /* Darker text color */
+    text-transform: uppercase;
+    white-space: nowrap;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    padding-bottom: 5px; /* Space for underline */
+    }
+    nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px; /* Thicker underline */
+    background-color: #f7d600; /* Underline color */
+    transition: width 0.3s ease-in-out;
+    }
+    nav a:hover {
+    color: #f7d600; /* Text color on hover */
+    }
+    nav a:hover::after {
+    width: 100%;
+    }
+
+    /* Main Content (Team Members) Styles - Updated for overlay text */
+    main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+    gap: 30px; /* Increased gap */
+    max-width: 1000px; /* Increased max-width for main content */
+    margin: 50px auto; /* Added margin-top */
+    padding: 0 20px; /* Padding for smaller screens */
+    }
+
+    .team-member {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #052a3a; /* Dark background for member card */
+    padding: 20px; /* Padding around the circle container */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    }
+    .team-member:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    }
+
+    /* Circles around images - Enhanced and prepared for text overlay */
+    .circle-bg-blue,
+    .circle-bg-darkblue,
+    .circle-bg-red {
+    width: 130px; /* Slightly larger circles */
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden; /* Hide overflow for text */
+    margin: 0 auto; /* Center the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #f7d600; /* Yellow border for all circles */
+    box-shadow: 0 0 0 5px rgba(247, 214, 0, 0.3); /* Outer glow effect */
+    position: relative; /* Crucial for positioning the text overlay */
+    }
+
+    .circle-bg-blue {
+    background-color: #00aaff;
+    }
+
+    .circle-bg-darkblue {
+    background-color: #003366;
+    }
+
+    .circle-bg-red {
+    background-color: #ff4444;
+    }
+
+    /* Image within circles */
+    .team-member img {
+    width: 100%; /* Image fills the circle */
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Ensure image is round */
+    transition: transform 0.3s ease-in-out; /* Smooth image scaling */
+    }
+
+    /* Text Overlay for Member Names */
+    .team-member .member-name-overlay {
+    position: absolute; /* Position relative to .circle-bg-* */
+    bottom: 0; /* Position at the bottom of the circle */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    color: white;
+    font-size: 14px; /* Adjust font size as needed */
+    font-weight: 600;
+    padding: 5px 0;
+    border-bottom-left-radius: 50%; /* Match circle shape */
+    border-bottom-right-radius: 50%; /* Match circle shape */
+    transform: translateY(100%); /* Start hidden below the circle */
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .circle-bg-blue:hover .member-name-overlay,
+    .circle-bg-darkblue:hover .member-name-overlay,
+    .circle-bg-red:hover .member-name-overlay {
+    transform: translateY(0); /* Slide up into view */
+    opacity: 1;
+    }
+
+    /* Hide the original h3 name that was below the circle */
+    .team-member h3 {
+        display: none; /* Hide the name below the circle */
+    }
+
+
+    /* Footer Styles - Enhanced */
+    footer {
+    background-color: #1a1a1a; /* Darker footer background */
+    color: white;
+    padding: 50px 30px; /* More padding */
+    font-size: 13px; /* Slightly larger font */
+    /* Hapus dua baris ini untuk membuat footer full-width: */
+    /* max-width: 1200px; */
+    /* margin: 100px auto 0; */
+    width: 100%; /* Pastikan lebar 100% */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px; /* Increased gap between sections */
+    border-top: 5px solid #f7d600; /* Yellow top border */
+    }
+
+    .footer-left, .footer-center, .footer-right {
+    flex: 1 1 280px; /* Adjusted flex-basis */
+    }
+    .footer-left {
+    display: flex;
+    gap: 15px; /* Increased gap */
+    align-items: flex-start;
+    }
+    .footer-left img.footer-logo-img { /* Renamed for clarity */
+    width: 60px; /* Larger footer logo */
+    height: 60px;
+    object-fit: contain;
+    }
+    .footer-left .footer-logo-container { /* New container for logo text and office */
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-left .footer-logo-text { /* Renamed for clarity */
+    font-weight: 800; /* Bolder font */
+    font-size: 32px; /* Larger font size */
+    color: white;
+    position: relative;
+    padding-bottom: 8px;
+    margin-top: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    .footer-left .footer-logo-text::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 5px;
+    background-color: #f7d600;
+    border-radius: 2px;
+    }
+    .footer-left .head-office {
+    margin-left: 0; /* Remove margin-left as it's now part of flex column */
+    max-width: 300px;
+    margin-top: 15px; /* Space between logo and office text */
+    }
+    .footer-left .head-office h3 {
+    color: #f7d600;
+    font-weight: 700;
+    font-size: 17px;
+    margin: 0 0 10px 0;
+    }
+    .footer-left .head-office p {
+    margin: 0;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    }
+    .footer-center {
+    font-weight: 700;
+    color: #f7d600;
+    font-size: 14px;
+    line-height: 1.6; /* More spacing */
+    }
+    .footer-center span {
+    display: block;
+    margin-bottom: 8px; /* More spacing */
+    }
+    .footer-center a {
+        transition: color 0.3s ease;
+    }
+    .footer-center a:hover {
+        color: white;
+    }
+    .footer-right {
+    font-size: 13px;
+    line-height: 1.5;
+    }
+    .footer-right p {
+    margin: 0 0 12px 0; /* More spacing */
+    font-weight: 700;
+    color: #f7d600; /* Yellow for contact heading */
+    }
+    .footer-right .contact-email, .footer-right .contact-phone {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .footer-right .social-icons {
+    display: flex;
+    gap: 15px; /* Increased gap */
+    margin-top: 15px;
+    }
+    .footer-right .social-icons a {
+    display: inline-block;
+    width: 35px; /* Larger icons */
+    height: 35px;
+    background-color: #f7d600; /* Yellow background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .footer-right .social-icons a:hover {
+    background-color: #e6c500; /* Darker yellow on hover */
+    transform: translateY(-3px); /* Lift effect */
+    }
+    .footer-right .social-icons i {
+    color: #052a3a; /* Dark blue icon color */
+    font-size: 18px;
+    }
+
+    /* Responsive Adjustments - Enhanced */
+    @media (max-width: 768px) { /* Adjusted breakpoint for better responsiveness */
+    header {
+        padding: 10px 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-left {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    nav {
+        gap: 20px;
+        margin-top: 0;
+        width: 100%;
+        justify-content: center;
+    }
+    nav a {
+        font-size: 13px;
+        padding-bottom: 3px;
+    }
+    nav a::after {
+        height: 2px;
+    }
+    main {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+    .team-member {
+        padding: 15px;
+    }
+    .circle-bg-blue,
+    .circle-bg-darkblue,
+    .circle-bg-red {
+        width: 100px;
+        height: 100px;
+        border-width: 3px;
+        box-shadow: 0 0 0 3px rgba(247, 214, 0, 0.3);
+    }
+    .team-member h3 { /* Ensure original h3 is hidden even on small screens */
+        display: none;
+    }
+    .team-member .member-name-overlay { /* Adjust overlay for smaller screens if needed */
+        font-size: 12px;
+        padding: 3px 0;
+    }
+    footer {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+    .footer-left, .footer-center, .footer-right {
+        flex: 1 1 100%;
+        text-align: center;
+        align-items: center; /* Center items in column */
+    }
+    .footer-left {
+        flex-direction: column;
+    }
+    .footer-left .head-office {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .footer-right .social-icons {
+        justify-content: center; /* Center social icons */
+    }
+    }
+  </style>
+ </head>
+ <body>
+  <header>
+   <div class="header-left">
+    <img alt="EJM logo with motorcycle and text" class="logo" height="50" src="image/logoo.png" width="50"/>
+    <div class="ejm-text">
+     EJM
+    </div>
+    <form action="/hasil-pencarian" method="get" class="search-form">
+      <div aria-label="Search" class="search-circle">
+       <i aria-hidden="true" class="fas fa-search">
+       </i>
+      </div>
+      <input type="text" name="q" placeholder="Cari..." class="search-input"/>
+      <button type="submit" style="display: none;">Cari</button>
+     </form>
+   </div>
+   <nav>
+    <a href="index.html" target="_blank">
+     HOME
+    </a>
+    <a href="bagiannya zura.html" target="_blank">
+     LAYANAN &amp; FASILITAS
+    </a>
+    <a href="relilin sukucadang.html" target="_blank">
+     SUKU CADANG
+    </a>
+    <a href="soffireservasi.html" target="_blank">
+     RESERVASI
+    </a>
+    <a href="randyulasan.html" target="_blank">
+     ULASAN
+    </a>
+    <a href="artandaprofil.html" target="_blank">
+     PENGEMBANG
+    </a>
+   </nav>
+  </header>
+  <main>
+    <div class="team-member">
+      <a target="_blank" href="relilinprof.html">
+        <div class="circle-bg-blue">
+          <img alt="Relilin Tanofebri H." src="image/ft relilin.jpg"/>
+          <span class="member-name-overlay">Relilin Tanofebri H.</span>
+        </div>
+      </a>
+      <h3>Relilin Tanofebri H.</h3>
+    </div>
+
+    <div class="team-member">
+      <a target="_blank" href="index.html">
+        <div class="circle-bg-darkblue">
+          <img alt="Salma Aulia Rahma" src="image/ft salma.jpg"/>
+          <span class="member-name-overlay">Salma Aulia Rahma</span>
+        </div>
+      </a>
+      <h3>Salma Aulia Rahma</h3>
+    </div>
+
+    <div class="team-member">
+      <a target="_blank" href="soffiprof1home.html">
+        <div class="circle-bg-blue">
+          <img alt="Soffi Rizkyana Putri" src="image/ft sopi.jpg"/>
+          <span class="member-name-overlay">Soffi Rizkyana Putri</span>
+        </div>
+      </a>
+      <h3>Soffi Rizkyana Putri</h3>
+    </div>
+
+    <div class="team-member">
+      <a target="_blank" href="artandahomeprofil.html">
+        <div class="circle-bg-red" style="background-color:#d35a2a;">
+          <img alt="Vincensius Artanda P." src="image/artd ft.jpg"/>
+          <span class="member-name-overlay">Vincensius Artanda P.</span>
+        </div>
+      </a>
+      <h3>Vincensius Artanda P.</h3>
+    </div>
+
+    <div class="team-member">
+      <a target="_blank" href="main-profile-zura.html">
+        <div class="circle-bg-red">
+          <img alt="Zhura Elysia Fazira" src="image/ft zura.jpg"/>
+          <span class="member-name-overlay">Zhura Elysia Fazira</span>
+        </div>
+      </a>
+      <h3>Zhura Elysia Fazira</h3>
+    </div>
+
+    <div class="team-member">
+      <a target="_blank" href="randyhomeprofil.html">
+        <div class="circle-bg-red" style="background-color:#d35a2a;">
+          <img alt="Randy Pratama" src="image/ft randy.jpg"/>
+          <span class="member-name-overlay">Randy Pratama Putra</span>
+        </div>
+      </a>
+      <h3>Randy Pratama</h3>
+    </div>
+  </main>
+  <footer>
+   <div class="footer-left">
+    <img alt="EJM logo with motorcycle icon" class="footer-logo-img" height="40" src="image/logoo.png" width="40"/>
+    <div class="footer-logo-container">
+      <span class="footer-logo-text">
+       EJM
+      </span>
+      <div class="head-office">
+       <h3>
+        Head office
+       </h3>
+       <p>
+        Ds. Kendalrejo, Dsn. Pantimulyo
+        <br/>
+        RT04/RW03, Kec.Talun, Kab.Blitar
+       </p>
+      </div>
+    </div>
+   </div>
+   <div aria-label="Footer navigation links" class="footer-center">
+    <span>
+     <a target="_blank" href="bagiannya zura.html">LAYANAN &amp; FASILITAS</a>
+    </span>
+    <span>
+     <a target="_blank" href="relilin sukucadang.html">SUKU CADANG</a>
+    </span>
+    <span>
+     <a target="_blank" href="index.html">HOME</a>
+    </span>
+    <span>
+     <a target="_blank" href="soffireservasi.html">RESERVASI</a>
+    </span>
+   </div>
+   <div aria-label="Contact information and social media" class="footer-right">
+    <p>
+     <strong>
+      Hubungi Kami
+     </strong>
+    </p>
+    <p class="contact-email">
+     Layanan@EJM.com
+    </p>
+    <p class="contact-phone">
+     (+62)85785457239
+    </p>
+    <div class="social-icons">
+     <a aria-label="Instagram" class="instagram" href="#">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a aria-label="WhatsApp" class="whatsapp" href="https://wa.wizard.id/c467e7">
+      <i class="fab fa-whatsapp">
+      </i>
+     </a>
+     <a aria-label="Gmail" class="gmail" href="mailto:vincensius.artanda@gmail.com">
+      <i class="fas fa-envelope">
+      </i>
+     </a>
+     <a aria-label="YouTube" class="youtube" href="#">
+      <i class="fab fa-youtube">
+      </i>
+     </a>
+     <a aria-label="Facebook" class="facebook" href="#">
+      <i class="fab fa-facebook-f">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+    const teamMembers = document.querySelectorAll('.team-member .circle-bg-blue, .team-member .circle-bg-darkblue, .team-member .circle-bg-red');
+
+    teamMembers.forEach(member => {
+     const img = member.querySelector('img');
+     // The JS for image transform on hover was redundant with CSS.
+     // Kept it here for reference, but primary hover effect is now in CSS for team-member img.
+     member.addEventListener('mouseover', () => {
+       // img.style.transform = 'scale(1.1)'; // Handled by CSS now
+       // img.style.transition = 'transform 0.3s ease-in-out'; // Handled by CSS now
+     });
+     member.addEventListener('mouseout', () => {
+       // img.style.transform = 'scale(1)'; // Handled by CSS now
+       // img.style.transition = 'transform 0.3s ease-in-out'; // Handled by CSS now
+     });
+    });
+
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('mouseover', () => {
+            link.style.transform = 'scale(1.05)';
+            link.style.transition = 'transform 0.2s ease-in-out';
+        });
+        link.addEventListener('mouseout', () => {
+            link.style.transform = 'scale(1)';
+            link.style.transition = 'transform 0.2s ease-in-out';
+        });
+    });
+
+    const searchCircle = document.querySelector('.header-left .search-circle');
+    const searchForm = document.querySelector('.search-form');
+    const searchInput = document.querySelector('.search-input');
+
+    if (searchCircle && searchForm && searchInput) {
+        searchCircle.addEventListener('click', () => {
+            const query = searchInput.value.trim().toLowerCase();
+            console.log('Query:', query);
+
+            if (query === 'home' || query === 'beranda') {
+                console.log('Mengarah ke index.html');
+                window.location.href = 'index.html';
+            } else if (query === 'reservasi' || query === 'booking') {
+                window.location.href = 'soffireservasi.html';
+            } else if (query === 'suku cadang' || query === 'sparepart') {
+                window.location.href = 'relilin sukucadang.html';
+            } else if (query === 'ulasan' || query === 'review') {
+                window.location.href = 'randyulasan.html';
+            } else if (query === 'layanan & fasilitas' || query === 'layanan dan fasilitas' || query === 'layanan') {
+                window.location.href = 'bagiannya zura.html';
+            } else if (query === 'pengembang' || query === 'developer' || query === 'about us') {
+                window.location.href = 'artandaprofil.html';
+            } else {
+                searchForm.submit();
+            }
+        });
+    }
+  </script>
+ </body>
+</html>

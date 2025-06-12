@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Experience - MyPortfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+
+    <header class="bg-white shadow-md sticky top-0 z-50 dark:bg-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-semibold text-indigo-600">Salma Portfolio</a>
+
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium dark:text-gray-300">
+                <li><a href="index.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">HOME</a></li>
+                <li><a href="about.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">ABOUT</a></li>
+                <li><a href="eksperience.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">EXPERIENCE</a></li>
+                <li><a href="skill.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">SKILL</a></li>
+                <li><a href="sertifikat.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">CERTIFICATE</a></li>
+                <li><a href="pengembang.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">CONTACT</a></li>
+            </ul>
+
+            <div class="flex items-center">
+                <button id="dark-toggle" aria-label="Toggle Dark Mode" class="ml-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m8-10h-2M6 12H4m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414M16.95 16.95l1.414 1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                    </svg>
+                    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+                    </svg>
+                </button>
+
+                <button id="mobile-menu-button" aria-label="Open mobile menu" class="md:hidden ml-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <i class="fas fa-bars text-2xl text-gray-800 dark:text-gray-200"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <ul class="flex flex-col items-center space-y-4 py-4 text-gray-700 dark:text-gray-300">
+                <li><a href="index.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">HOME</a></li>
+                <li><a href="about.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">ABOUT</a></li>
+                <li><a href="eksperience.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">EXPERIENCE</a></li>
+                <li><a href="skill.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">SKILL</a></li>
+                <li><a href="sertifikat.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">CERTIFICATE</a></li>
+                <li><a href="pengembang.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">CONTACT</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-10 max-w-4xl" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-indigo-600 mb-10 text-center dark:text-indigo-400">My Journey & Expertise</h2>
+
+        <div class="relative border-l-4 border-indigo-300 dark:border-indigo-600 pl-6 space-y-12">
+
+            <div class="relative" data-aos="fade-right">
+                <div class="absolute -left-10 top-0 mt-1 w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center text-white shadow-md">
+                    <i class="fas fa-laptop-code text-lg"></i>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold text-indigo-700 dark:text-indigo-400 mb-2">Web Development & Database Management</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Sejak Awal 2023</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                        <li>Learn the basic web programming (HTML, CSS, Javascript)</li>
+                        <li>Make a simple website display design</li>
+                        <li>Developing a static and dynamic website with PHP & MySQL</li>
+                        <li>Using CMS like WordPress to build a website</li>
+                        <li>Manage servers and simple databases</li>
+                        <li>Web Server Installation and Configuration (Apache, Nginx)</li>
+                    </ul>
+                    <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+                        Lihat sertifikat terkait: <a href="sertifikat.html" class="text-indigo-600 dark:text-indigo-400 hover:underline">Sertifikat Web Dev</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="fade-left">
+                <div class="absolute -left-10 top-0 mt-1 w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center text-white shadow-md">
+                    <i class="fas fa-network-wired text-lg"></i>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold text-indigo-700 dark:text-indigo-400 mb-2">Networking & System Administration</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Sejak Akhir 2022</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                        <li>Install operating systems and software</li>
+                        <li>Configuration of LAN and WLAN networks</li>
+                        <li>Basic network configuration using proxy (Winbox, CLI)</li>
+                        <li>Bandwidth and Firewall Management in Mikrotik</li>
+                        <li>Basic network security practices (firewalls, encryption)</li>
+                    </ul>
+                    <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+                        Lihat proyek jaringan: <a href="link-ke-proyek-jaringan.html" class="text-indigo-600 dark:text-indigo-400 hover:underline">Studi Kasus Konfigurasi Mikrotik</a>
+                    </p>
+                </div>
+            </div>
+
+            </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true // Animasi hanya berjalan sekali saat scroll ke bawah
+        });
+
+        // Dark Mode toggle logic
+        const toggleBtn = document.getElementById('dark-toggle');
+        const iconSun = document.getElementById('icon-sun');
+        const iconMoon = document.getElementById('icon-moon');
+
+        function initDarkMode() {
+            const storedMode = localStorage.getItem('theme');
+            if (storedMode === 'dark' || (!storedMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                iconSun.classList.remove('hidden');
+                iconMoon.classList.add('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                iconSun.classList.add('hidden');
+                iconMoon.classList.remove('hidden');
+            }
+        }
+
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                iconSun.classList.add('hidden');
+                iconMoon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                iconSun.classList.remove('hidden');
+                iconMoon.classList.add('hidden');
+            }
+        }
+
+        toggleBtn.addEventListener('click', toggleDarkMode);
+        initDarkMode();
+
+        // --- Hamburger Menu Logic ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+        // --- End Hamburger Menu Logic ---
+    </script>
+</body>
+</html>

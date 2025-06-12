@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skill - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+
+<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="home.html" class="text-2xl font-semibold text-indigo-600">Salma Portfolio</a>
+
+        <ul class="hidden md:flex space-x-6 font-medium text-gray-700 dark:text-gray-300">
+            <li><a href="home.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">HOME</a></li>
+            <li><a href="about.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">ABOUT</a></li>
+            <li><a href="eksperience.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">EXPERIENCE</a></li>
+            <li><a href="skill.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">SKILL</a></li>
+            <li><a href="sertifikat.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">CERTIFICATE</a></li>
+            <li><a href="pengembang.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">CONTACT</a></li>
+        </ul>
+
+        <div class="flex items-center">
+            <button id="dark-toggle" aria-label="Toggle Dark Mode" class="ml-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m8-10h-2M6 12H4m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414M16.95 16.95l1.414 1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                </svg>
+                <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+                </svg>
+            </button>
+
+            <button id="mobile-menu-button" aria-label="Open mobile menu" class="md:hidden ml-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <i class="fas fa-bars text-2xl text-gray-800 dark:text-gray-200"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <ul class="flex flex-col items-center space-y-4 py-4 text-gray-700 dark:text-gray-300">
+            <li><a href="home.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">HOME</a></li>
+            <li><a href="about.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">ABOUT</a></li>
+            <li><a href="eksperience.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">EXPERIENCE</a></li>
+            <li><a href="skill.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">SKILL</a></li>
+            <li><a href="sertifikat.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">CERTIFICATE</a></li>
+            <li><a href="pengembang.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">CONTACT</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="container mx-auto px-6 py-10 max-w-7xl">
+
+    <section class="mb-12 flex flex-col items-center" data-aos="fade-down">
+        <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-indigo-600 shadow-lg mb-4">
+            <img src="image/ft salma.jpg" alt="Profile Photo" class="object-cover w-full h-full" />
+        </div>
+        <h1 class="text-4xl font-bold text-indigo-600 dark:text-indigo-400 text-center">My Skills</h1>
+        <p class="text-lg text-gray-700 dark:text-gray-300 text-center mt-2">Here's a detailed overview of my technical abilities.</p>
+    </section>
+
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex flex-col items-center mb-4">
+                <img src="image/deb logo.jpg" alt="Debian Logo" class="w-20 h-20 object-contain mb-2" />
+                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">Debian</h3>
+            </div>
+            <ul class="list-disc list-inside space-y-2 mb-4 text-gray-700 dark:text-gray-300 text-base">
+                <li>Installing and configuring Debian</li>
+                <li>Linux file system & basic CLI commands (ls, cd, rm, cp, mv)</li>
+                <li>Package management (apt, dpkg)</li>
+                <li>User and permissions management (chmod, chown, usermod)</li>
+                <li>Deploying web servers (WordPress & source code)</li>
+                <li>Network configuration (Static IP, DHCP, SSH, firewall)</li>
+                <li>Process and service management (systemctl, journalctl)</li>
+                <li>Web server setup (Apache, Nginx)</li>
+            </ul>
+            <div>
+                <p class="font-medium mb-1">Skill Level</p>
+                <div class="w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700 overflow-hidden">
+                    <div class="bg-indigo-600 h-4 rounded-full transition-all duration-1000 ease-out" style="width: 80%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex flex-col items-center mb-4">
+                <img src="image/MikroTik-Logo.jpg" alt="Mikrotik Logo" class="w-20 h-20 object-contain mb-2" />
+                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">MikroTik</h3>
+            </div>
+            <ul class="list-disc list-inside space-y-2 mb-4 text-gray-700 dark:text-gray-300 text-base">
+                <li>OSPF and Static Routing</li>
+                <li>Setting up AP Bridge & Station modes</li>
+                <li>WLAN and SSID configuration</li>
+                <li>Subnetting and IP addressing</li>
+                <li>Introduction to MikroTik RouterOS and Winbox</li>
+                <li>Basic IP addressing and subnetting</li>
+                <li>DHCP Server and Client configuration</li>
+                <li>NAT (Masquerade, Port Forwarding)</li>
+                <li>Firewall and security settings</li>
+                <li>Bandwidth management (Queue, QoS)</li>
+                <li>Wireless and Hotspot configuration</li>
+                <li>Tunnel/VPN</li>
+            </ul>
+            <div>
+                <p class="font-medium mb-1">Skill Level</p>
+                <div class="w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700 overflow-hidden">
+                    <div class="bg-indigo-600 h-4 rounded-full transition-all duration-1000 ease-out" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex flex-col items-center mb-4">
+                <img src="image/Logo HTML5 (1).JPG" alt="HTML5 Logo" class="w-20 h-20 object-contain mb-2" />
+                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">HTML</h3>
+            </div>
+            <ul class="list-disc list-inside space-y-2 mb-4 text-gray-700 dark:text-gray-300 text-base">
+                <li>Basic HTML structure</li>
+                <li>Headings, paragraphs, and text formatting</li>
+                <li>Lists (ordered and unordered)</li>
+                <li>Links and navigation</li>
+                <li>Images and multimedia</li>
+                <li>Forms and form validation</li>
+                <li>Tables and data representation</li>
+                <li>Semantic HTML</li>
+                <li>Developing websites using HTML</li>
+            </ul>
+            <div>
+                <p class="font-medium mb-1">Skill Level</p>
+                <div class="w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700 overflow-hidden">
+                    <div class="bg-indigo-600 h-4 rounded-full transition-all duration-1000 ease-out" style="width: 85%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+            <div class="flex flex-col items-center mb-4">
+                <img src="image/google logo.png" alt="Google Logo" class="w-20 h-20 object-contain mb-2" />
+                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">Google Workspace</h3>
+            </div>
+            <ul class="list-disc list-inside space-y-2 mb-4 text-gray-700 dark:text-gray-300 text-base">
+                <li>Using Google Docs, Sheets, and Slides for Productivity</li>
+                <li>Email management with Gmail (filters, labels, autoresponders, add-ons)</li>
+                <li>Setting schedules and collaboration with Google Calendar</li>
+                <li>Sharing and managing files on Google Drive</li>
+                <li>Creating forms and surveys with Google Forms</li>
+                <li>Using Google Meet for online meetings</li>
+            </ul>
+            <div>
+                <p class="font-medium mb-1">Skill Level</p>
+                <div class="w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700 overflow-hidden">
+                    <div class="bg-indigo-600 h-4 rounded-full transition-all duration-1000 ease-out" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+            <div class="flex flex-col items-center mb-4">
+                <img src="image/js logo.jpg" alt="JavaScript Logo" class="w-20 h-20 object-contain mb-2" />
+                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">JavaScript</h3>
+            </div>
+            <ul class="list-disc list-inside space-y-2 mb-4 text-gray-700 dark:text-gray-300 text-base">
+                <li>Basic JavaScript syntax</li>
+                <li>JavaScript code structure</li>
+                <li>Variable declaration</li>
+                <li>Data types</li>
+                <li>Operators</li>
+                <li>Arithmetic functions</li>
+                <li>Function declaration</li>
+                <li>Flow control and loop structures</li>
+            </ul>
+            <div>
+                <p class="font-medium mb-1">Skill Level</p>
+                <div class="w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700 overflow-hidden">
+                    <div class="bg-indigo-600 h-4 rounded-full transition-all duration-1000 ease-out" style="width: 80%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+            <div class="flex flex-col items-center mb-4">
+                <img src="image/css logooo.jpeg" alt="CSS Logo" class="w-20 h-20 object-contain mb-2" />
+                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100">CSS</h3>
+            </div>
+            <ul class="list-disc list-inside space-y-2 mb-4 text-gray-700 dark:text-gray-300 text-base">
+                <li>CSS Selectors (Element, ID, Class, Attribute, Combination)</li>
+                <li>Basic CSS properties (Color & Background, Text & Typography, Layout & Box Model, Display & Positioning)</li>
+                <li>Responsiveness & Media Queries</li>
+                <li>CSS Variables & Custom Properties</li>
+            </ul>
+            <div>
+                <p class="font-medium mb-1">Skill Level</p>
+                <div class="w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700 overflow-hidden">
+                    <div class="bg-indigo-600 h-4 rounded-full transition-all duration-1000 ease-out" style="width: 85%"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ 
+        duration: 800, 
+        easing: 'ease-in-out',
+        once: true, // Animations only happen once when scrolling down
+    });
+
+    // Dark Mode toggle logic
+    const toggleBtn = document.getElementById('dark-toggle');
+    const iconSun = document.getElementById('icon-sun');
+    const iconMoon = document.getElementById('icon-moon');
+
+    function initDarkMode() {
+        const storedMode = localStorage.getItem('theme');
+        if (storedMode === 'dark' || (!storedMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            iconSun.classList.remove('hidden');
+            iconMoon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            iconSun.classList.add('hidden');
+            iconMoon.classList.remove('hidden');
+        }
+    }
+
+    function toggleDarkMode() {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            iconSun.classList.add('hidden');
+            iconMoon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            iconSun.classList.remove('hidden');
+            iconMoon.classList.add('hidden');
+        }
+    }
+
+    toggleBtn.addEventListener('click', toggleDarkMode);
+    initDarkMode();
+
+    // --- Hamburger Menu Logic ---
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+    });
+
+    // Optional: Close mobile menu when a link inside it is clicked
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+        });
+    });
+    // --- End Hamburger Menu Logic ---
+</script>
+
+</body>
+</html>

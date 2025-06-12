@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Certificates - MyPortfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        /* Lightbox Styles */
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: rgba(0,0,0,0.4);
+            border-radius: 9999px;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+
+    <header class="bg-white shadow-md sticky top-0 z-50 dark:bg-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-semibold text-indigo-600">Salma Portfolio</a>
+
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium dark:text-gray-300">
+                <li><a href="index.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">HOME</a></li>
+                <li><a href="about.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">ABOUT</a></li>
+                <li><a href="eksperience.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">EXPERIENCE</a></li>
+                <li><a href="skill.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">SKILL</a></li>
+                <li><a href="sertifikat.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">CERTIFICATE</a></li>
+                <li><a href="pengembang.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">CONTACT</a></li>
+            </ul>
+
+            <div class="flex items-center">
+                <button id="dark-toggle" aria-label="Toggle Dark Mode" class="ml-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m8-10h-2M6 12H4m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414M16.95 16.95l1.414 1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                    </svg>
+                    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+                    </svg>
+                </button>
+
+                <button id="mobile-menu-button" aria-label="Open mobile menu" class="md:hidden ml-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <i class="fas fa-bars text-2xl text-gray-800 dark:text-gray-200"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <ul class="flex flex-col items-center space-y-4 py-4 text-gray-700 dark:text-gray-300">
+                <li><a href="index.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">HOME</a></li>
+                <li><a href="about.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">ABOUT</a></li>
+                <li><a href="eksperience.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">EXPERIENCE</a></li>
+                <li><a href="skill.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">SKILL</a></li>
+                <li><a href="sertifikat.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">CERTIFICATE</a></li>
+                <li><a href="pengembang.html" class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md">CONTACT</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-10 max-w-5xl">
+        <h2 class="text-3xl font-bold text-indigo-600 mb-8 text-center dark:text-indigo-400" data-aos="fade-down">My Certificates</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group" 
+                 data-img="image/salma certif network.jpeg" tabindex="0" role="button" aria-label="View Network Fundamental Certificate"
+                 data-aos="fade-up" data-aos-delay="100">
+                <img src="image/salma certif network.jpeg" alt="Network Certificate" class="w-full h-40 object-cover rounded mb-3 transform group-hover:scale-105 transition-transform duration-300" />
+                <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Network Fundamental - Aguna Course</h3>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group" 
+                 data-img="image/salma certif linux.jpeg" tabindex="0" role="button" aria-label="View Linux Fundamental Certificate"
+                 data-aos="fade-up" data-aos-delay="200">
+                <img src="image/salma certif linux.jpeg" alt="Linux Certificate" class="w-full h-40 object-cover rounded mb-3 transform group-hover:scale-105 transition-transform duration-300" />
+                <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Linux Fundamental - Aguna Course</h3>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group" 
+                 data-img="image/salma certif virtual machine.jpeg" tabindex="0" role="button" aria-label="View Virtual Machine Fundamental Certificate"
+                 data-aos="fade-up" data-aos-delay="300">
+                <img src="image/salma certif virtual machine.jpeg" alt="Virtual Machine Fundamental Certificate" class="w-full h-40 object-cover rounded mb-3 transform group-hover:scale-105 transition-transform duration-300" />
+                <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Virtual Machine Fundamental - Aguna Course</h3>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group" 
+                 data-img="image/salma certif python.jpeg" tabindex="0" role="button" aria-label="View Python Fundamental Certificate"
+                 data-aos="fade-up" data-aos-delay="400">
+                <img src="image/salma certif python.jpeg" alt="Python Fundamental Certificate" class="w-full h-40 object-cover rounded mb-3 transform group-hover:scale-105 transition-transform duration-300" />
+                <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Python Fundamental - Aguna Course</h3>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group" 
+                 data-img="image/salma certif fortinet2.jpeg" tabindex="0" role="button" aria-label="View FCF Cybersecurity Certificate"
+                 data-aos="fade-up" data-aos-delay="500">
+                <img src="image/salma certif fortinet2.jpeg" alt="FCF - Getting Started in Cybersecurity 2.0 Certificate" class="w-full h-40 object-cover rounded mb-3 transform group-hover:scale-105 transition-transform duration-300" />
+                <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">FCF - Getting Started in Cybersecurity 2.0 Self-Paced - Fortinet Training Institute</h3>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group" 
+                 data-img="image/salma certif fortinet1.jpeg" tabindex="0" role="button" aria-label="View FCF Threat Landscape Certificate"
+                 data-aos="fade-up" data-aos-delay="600">
+                <img src="image/salma certif fortinet1.jpeg" alt="FCF - Introduction to the Threat Landscape 2.0 Certificate" class="w-full h-40 object-cover rounded mb-3 transform group-hover:scale-105 transition-transform duration-300" />
+                <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">FCF - Introduction to the Threat Landscape 2.0 Self-Paced - Fortinet Training Institute</h3>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group" 
+                 data-img="image/salma certih js.jpeg" tabindex="0" role="button" aria-label="View Learn JavaScript Certificate"
+                 data-aos="fade-up" data-aos-delay="700">
+                <img src="image/salma certih js.jpeg" alt="Belajar JavaScript Certificate" class="w-full h-40 object-cover rounded mb-3 transform group-hover:scale-105 transition-transform duration-300" />
+                <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Learn JavaScript - Always Ngoding</h3>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group" 
+                 data-img="image/salma certif html.jpeg" tabindex="0" role="button" aria-label="View Learn HTML Certificate"
+                 data-aos="fade-up" data-aos-delay="800">
+                <img src="image/salma certif html.jpeg" alt="Belajar HTML Certificate" class="w-full h-40 object-cover rounded mb-3 transform group-hover:scale-105 transition-transform duration-300" />
+                <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Learn HTML - Always Ngoding</h3>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group" 
+                 data-img="image/salma certif redhat1.jpeg" tabindex="0" role="button" aria-label="View Red Hat RH104 Certificate"
+                 data-aos="fade-up" data-aos-delay="900">
+                <img src="image/salma certif redhat1.jpeg" alt="Red Hat Training - RH104 Certificate" class="w-full h-40 object-cover rounded mb-3 transform group-hover:scale-105 transition-transform duration-300" />
+                <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Red Hat Training - RH104</h3>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group" 
+                 data-img="image/salma certif redhat2.jpeg" tabindex="0" role="button" aria-label="View Red Hat RH124 Certificate"
+                 data-aos="fade-up" data-aos-delay="1000">
+                <img src="image/salma certif redhat2.jpeg" alt="Red Hat Training - RH124 Certificate" class="w-full h-40 object-cover rounded mb-3 transform group-hover:scale-105 transition-transform duration-300" />
+                <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Red Hat Training - RH124</h3>
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" tabindex="-1">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img src="" alt="" id="lightbox-img" />
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true, // Only animate once
+        });
+
+        // Dark Mode toggle logic
+        const toggleBtn = document.getElementById('dark-toggle');
+        const iconSun = document.getElementById('icon-sun');
+        const iconMoon = document.getElementById('icon-moon');
+
+        function initDarkMode() {
+            const storedMode = localStorage.getItem('theme');
+            if (storedMode === 'dark' || (!storedMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                iconSun.classList.remove('hidden');
+                iconMoon.classList.add('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                iconSun.classList.add('hidden');
+                iconMoon.classList.remove('hidden');
+            }
+        }
+
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                iconSun.classList.add('hidden');
+                iconMoon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                iconSun.classList.remove('hidden');
+                iconMoon.classList.add('hidden');
+            }
+        }
+
+        toggleBtn.addEventListener('click', toggleDarkMode);
+        initDarkMode();
+
+        // --- Hamburger Menu Logic ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+        // --- End Hamburger Menu Logic ---
+
+        // Lightbox logic (remains mostly the same, minor improvements)
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.lightbox-close');
+        const certificates = document.querySelectorAll('[data-img]');
+
+        certificates.forEach(cert => {
+            cert.addEventListener('click', () => {
+                const src = cert.getAttribute('data-img');
+                const alt = cert.querySelector('img').alt; // Get alt text from the image inside the card
+                lightboxImg.src = src;
+                lightboxImg.alt = alt; // Set alt text for accessibility
+                lightbox.classList.add('active');
+                lightbox.focus(); // Focus on the lightbox for accessibility
+            });
+            cert.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault(); // Prevent scrolling on spacebar
+                    cert.click();
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            lightboxImg.src = ''; // Clear src
+            lightboxImg.alt = ''; // Clear alt
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) { // Only close if clicking on the overlay, not the image
+                closeBtn.click();
+            }
+        });
+
+        // Close lightbox on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>

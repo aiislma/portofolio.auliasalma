@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Home | Portfolio Salma
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+        };
+    </script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+        <nav aria-label="Primary Navigation" class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a class="text-2xl font-bold text-indigo-600 dark:text-indigo-400" href="home.html">
+                Salma Portfolio
+            </a>
+            <ul class="hidden md:flex space-x-6 font-medium" id="navLinks" role="menubar">
+                <li role="none">
+                    <a class="hover:text-indigo-600 dark:hover:text-indigo-400" href="home.html" role="menuitem">
+                        Home
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="hover:text-indigo-600 dark:hover:text-indigo-400" href="about.html" role="menuitem">
+                        About
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="hover:text-indigo-600 dark:hover:text-indigo-400" href="eksperience.html" role="menuitem">
+                        Experience
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="hover:text-indigo-600 dark:hover:text-indigo-400" href="skill.html" role="menuitem">
+                        Skill
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="hover:text-indigo-600 dark:hover:text-indigo-400" href="sertifikat.html" role="menuitem">
+                        Certificate
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="hover:text-indigo-600 dark:hover:text-indigo-400" href="pengembang.html" role="menuitem">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+
+            <div class="flex items-center space-x-4">
+                <button aria-label="Toggle Dark Mode" class="text-xl p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500" id="themeToggle">
+                    🌙
+                </button>
+                <div class="relative">
+                    <button aria-label="Contact Options" class="text-xl text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500" id="contactMenuBtn">
+                        📞
+                    </button>
+                    <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 rounded-md shadow-lg py-1 hidden" id="contactDropdown">
+                        <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600" href="https://www.instagram.com/auliaasalma._/" target="_blank">
+                            <i class="fab fa-instagram mr-2">
+                            </i>
+                            Instagram
+                        </a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600" href="mailto:salmaauliarahma1848@gmail.com">
+                            <i class="fas fa-envelope mr-2">
+                            </i>
+                            Email
+                        </a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600" href="https://youtube.com/@aiislma_?si=mmGuWRsuLoxzzCmM" target="_blank">
+                            <i class="fab fa-youtube mr-2">
+                            </i>
+                            YouTube
+                        </a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600" href="https://github.com/aiislma" target="_blank">
+                            <i class="fab fa-github mr-2">
+                            </i>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <button aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle Menu" class="md:hidden focus:outline-none p-2 rounded focus:ring-2 focus:ring-indigo-500" id="menuBtn">
+                    <i class="fas fa-bars text-2xl text-gray-800 dark:text-gray-200">
+                    </i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700" id="mobileMenu">
+            <ul class="flex flex-col items-center space-y-4 py-4 text-gray-700 dark:text-gray-300" role="menu">
+                <li role="none">
+                    <a class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md" href="home.html" role="menuitem">
+                        Home
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md" href="about.html" role="menuitem">
+                        About
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md" href="eksperience.html" role="menuitem">
+                        Experience
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md" href="skill.html" role="menuitem">
+                        Skill
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md" href="sertifikat.html" role="menuitem">
+                        Certificate
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="block w-full text-center px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md" href="pengembang.html" role="menuitem">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="container mx-auto px-6 py-10">
+        <section class="flex flex-col md:flex-row items-center space-y-10 md:space-y-0 md:space-x-10" data-aos="fade-up">
+            <div class="text-center md:text-left md:w-1/2" data-aos="fade-right" data-aos-delay="200">
+                <h1 class="text-4xl font-bold text-indigo-600 dark:text-indigo-400">
+                    Hello, I'm Salma Aulia Rahma!
+                </h1>
+                <p class="mt-4 text-lg">
+                    I am a student specializing in Computer and Network Engineering (TKJ) at SMK Negeri 1 Nglegok, passionate about building innovative technology and network solutions.
+                </p>
+                <p class="mt-4 text-md text-gray-700 dark:text-gray-300">
+                    Explore more about my journey, projects, and expertise.
+                </p>
+                <a class="inline-block mt-6 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md transition-colors duration-300" href="about.html">
+                    Get to Know Me Better
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-delay="400">
+                <img alt="ft salma" class="rounded-full shadow-lg w-64 h-64 object-cover border-4 border-indigo-600 transform hover:scale-105 transition-transform duration-300" height="256" src="image/ft salma.jpg" width="256" />
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white dark:bg-gray-800 py-6 text-center text-sm text-gray-600 dark:text-gray-300">
+        © 2025 Salma Aulia Rahma. All rights reserved.
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        AOS.init({
+            duration: 800, // global duration
+            easing: 'ease-in-out', // global easing
+            once: true, // whether animation should happen only once - while scrolling down
+        });
+
+        // Dark Mode toggle logic (using original emoji and logic)
+        const themeToggle = document.getElementById("themeToggle");
+        themeToggle.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            themeToggle.textContent = document.documentElement.classList.contains("dark") ? "☀️" : "🌙";
+            // Store preference in localStorage
+            if (document.documentElement.classList.contains("dark")) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Initialize dark mode based on localStorage or system preference
+        function initDarkMode() {
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                themeToggle.textContent = "☀️";
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeToggle.textContent = "🌙";
+            }
+        }
+        initDarkMode();
+
+        // Hamburger Menu Logic
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+            const expanded = menuBtn.getAttribute("aria-expanded") === "true" ? "false" : "true";
+            menuBtn.setAttribute("aria-expanded", expanded);
+        });
+
+        // Close mobile menu when a link inside it is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Contact Dropdown Logic
+        const contactMenuBtn = document.getElementById("contactMenuBtn");
+        const contactDropdown = document.getElementById("contactDropdown");
+
+        contactMenuBtn.addEventListener("click", () => {
+            contactDropdown.classList.toggle("hidden");
+        });
+
+        // Close the dropdown if the user clicks outside of it, and not on the mobile menu button/content
+        window.addEventListener("click", (event) => {
+            if (!contactMenuBtn.contains(event.target) && !contactDropdown.contains(event.target) && !menuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                contactDropdown.classList.add("hidden");
+            }
+        });
+    </script>
+</body>
+</html>
